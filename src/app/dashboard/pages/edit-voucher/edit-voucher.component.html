@@ -1,0 +1,51 @@
+<div>
+  <div class="maincontainer">
+    <app-header></app-header>
+  </div>
+  <div class="container main">
+    <div>
+      <button class="btn btn-outline-secondary back" (click)="goback()">Go back</button>
+    </div>
+    <form [formGroup]="editVouchers" (ngSubmit)="onSubmit()" >
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" formControlName="category">
+          <option value="">Choose...</option>
+          <option value="New Customers">New Customers</option>
+          <option value="Old Customers">Old Customers</option>
+        </select>
+        <!-- <div *ngIf="ctrl.errors['required']">It is required</div> -->
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-5 col-sm-12">
+          <label for="suffix">Suffix</label>
+          <input type="text" id="suffix" placeholder="suffix" class="form-control" formControlName="suffix" />
+        </div>
+        <div class="form-group offset-md-2 col-md-5 col-sm-12">
+          <label for="prefix">Prefix</label>
+          <input type="text" id="prefix" placeholder="prefix" class="form-control" formControlName="prefix" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-5 col-sm-12">
+          <label for="type">Type</label>
+          <select class="form-control" id="type" formControlName="type">
+            <option value="">Choose...</option>
+            <option value="Numeric">Numeric</option>
+            <option value="Alphanumeric">Alphanumeric</option>
+            <option value="Alphabeth">Alphabeth</option>
+          </select>
+        </div>
+        <div class="form-group offset-md-2 col-md-5 col-sm-12">
+          <label for="number">Number</label>
+          <input type="number" placeholder="2" id="number" class="form-control" formControlName="number" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="value">Value</label>
+        <input type="number" id="value" class="form-control" formControlName="value" />
+      </div>
+      <button type="submit" class="btn btn-outline-info">Edit Voucher</button>
+    </form>
+  </div>
+</div>

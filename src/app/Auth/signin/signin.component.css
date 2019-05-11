@@ -1,0 +1,11 @@
+
+
+label{
+  color: black
+}
+input{
+  padding: 10px;
+}
+input:focus{
+  outline: none;
+}

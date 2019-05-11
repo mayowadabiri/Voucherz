@@ -1,0 +1,49 @@
+.dashboard{
+    display: flex;
+    height: 100vh;
+}
+.sidemenu{
+    background-color: rgb(219, 219, 219);
+    width: 250px;
+    height: 100%;
+    position: -webkit-sticky;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    overflow-x: hidden;
+    top: 0
+}
+.mainpage{
+    flex-grow: 1 ;
+    margin-left: 250px;
+    background-color: white;
+    height: 100%
+}
+.logout{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-content: center;
+    background-color: red;
+}
+
+@media (max-width: 600px){
+    .dashboard{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+   .sidemenu{
+       display: block;
+       width: 100%;
+       position: relative;
+   }
+   .mainpage{
+       display: block;
+       height: 100vh;
+       display: block;
+       margin: 0
+   }
+}
+
+

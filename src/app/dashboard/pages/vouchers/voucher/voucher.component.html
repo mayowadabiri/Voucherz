@@ -1,0 +1,32 @@
+<div class="mainTable">
+  <!-- <h2 *ngIf="emptyMesage">{{}}</h2> -->
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Category</th>
+        <th>Prefix</th>
+        <th>Suffix</th>
+        <th>Type</th>
+        <th>Number</th>
+        <th>Value</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voucher of myVoucher; let i = index"  >
+        <td>{{voucher.category}} </td>
+        <td>{{voucher.prefix}}</td>
+        <td>{{voucher.suffix}}</td>
+        <td>{{voucher.type}}</td>
+        <td>{{voucher.number}}</td>
+        <td>{{voucher.value}}</td>
+        <td><button class="btn btn-outline-info"(click)="onLoad(i+1)">Edit</button></td>
+        <td><button class="btn btn-outline-danger"(click)="deleteVoucher()" >Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- [routerLink] = "['./', i+1, 'edit']"
+          [queryParams]="{allowEdit: '1'}" -->

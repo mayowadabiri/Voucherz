@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <form #search="ngForm">
+                <input placeholder="Search" type="search" class="form-control" name="searchInput" ngModel/>
+            </form>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+           <a (click)="logout()" [routerLink]="['/signin']" >Log Out</a>
+        </div>
+    </div>
+</nav>

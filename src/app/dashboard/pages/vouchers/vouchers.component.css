@@ -1,0 +1,20 @@
+.empty{
+  display: block;
+  width: 50%;
+  margin: 200px auto 0 auto;
+}
+.h2{
+  border: 2px solid black;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  /* width: 50%; */
+}
+.btn{
+  display: block;
+  width: 50%;
+  padding: 10px;
+  margin: 50px auto;
+  border-radius: 5px;
+  font-size: 20px
+}

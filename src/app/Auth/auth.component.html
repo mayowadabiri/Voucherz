@@ -1,0 +1,15 @@
+<div class="majorcontainer">
+    <div class="maincontainer">
+        <div class="linkcontainer">
+            <a class="linkcontainerSignIn" [routerLink]="['/signin']" routerLinkActive="router-link-active">
+                <p class="linkText">Sign In</p>
+            </a>
+            <a class="linkcontainerSignUp" [routerLink]="['/signup']" routerLinkActive="router-link-active">
+                <p  class="linkText">Sign Up</p>
+            </a>
+        </div>
+        <div class="mainPage">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

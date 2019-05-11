@@ -1,0 +1,40 @@
+.majorcontainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    /* max-width: ; */
+}
+.maincontainer{
+    width: 30%;
+    margin: 140px auto 0 auto;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.linkcontainer{
+    display: flex;
+    justify-content: space-evenly
+}
+.linkcontainerSignIn, .linkcontainerSignUp{
+    padding:5px;
+    width: 100%;
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    /* color: black */
+}
+.linkcontainerSignIn:hover, .linkcontainerSignUp:hover{
+    text-decoration: none
+}
+.router-link-active{
+    background-color: black ;
+    color: white;
+    opacity: 1;
+    font-weight: bold
+}
+
+.mainPage{
+    padding: 20px;
+}

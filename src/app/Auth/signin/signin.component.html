@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form [formGroup]="signIn" (ngSubmit)="onSubmit()" >
+      <div *ngIf="httpError" >
+        <small class="invalid">{{httpError}}</small>
+      </div>
+      <div *ngIf="error">{{error}} </div>
+      <div class="form-group">
+        <label for="name">E-mail Adress</label>
+        <input
+        placeholder="name@example.com"
+        id="name" type="text"
+          class="form-control" formControlName="email"  [ngClass]="{'input.ng-invalid.ng-touched': submitting && f.email.invalid}"/>
+        <div *ngIf="f.email.invalid && submitting" class="help-block">
+          <small *ngIf="f.email.errors['required']" class="invalid">Email Address is required</small>
+          <small *ngIf="f.email.errors.email" class="invalid">Enter a valid email</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input placeholder="*******" id="password" type="password" class="form-control" formControlName="password" />
+      </div>
+      <div *ngIf="f.password.invalid && submitting" class="help-block">
+          <small *ngIf="f.password.errors['required']" class="invalid">Password is required</small>
+        </div>
+      <button class="btn  button">Submit</button>
+    </form>
+  </div>
+</div>
