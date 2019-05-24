@@ -14,7 +14,9 @@ export class AppHttpInterceptors implements HttpInterceptor {
         //     "Content-Type": "application/json"
         // })
         const clone = req.clone({
-            // headers: headers,
+            // setHeaders:{
+            //   "Authorization": `Bearer ${localStorage.getItem("token")}`
+            // }
         })
 
         return next.handle(clone).pipe(

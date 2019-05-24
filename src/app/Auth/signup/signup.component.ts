@@ -28,23 +28,23 @@ export class SignupComponent implements OnInit {
   get f() {
     return this.signup.controls
   }
-  onSubmit() {
-    this.submitting = true;
-    if (this.signup.invalid) {
-      return;
-    } else {
-      const email = this.f.email.value;
-      const password = this.f.password.value
-      this.authService.signUpUser(email, password)
-        .subscribe(
-          (res)=> console.log(res),
-          (err)=>{
-            console.error(err.error.error)
-            this.httpError = err.error.error.message
-            this.toastr.error(err.error.error.message)
-          }
-        )
-      // this.error = this.authService.errorMessage;
-    }
-  }
+  // onSubmit() {
+  //   this.submitting = true;
+  //   if (this.signup.invalid) {
+  //     return;
+  //   } else {
+  //     const email = this.f.email.value;
+  //     const password = this.f.password.value
+  //     this.authService.signUpUser(email, password)
+  //       .subscribe(
+  //         (res)=> console.log(res),
+  //         (err)=>{
+  //           console.error(err.error.error)
+  //           this.httpError = err.error.error.message
+  //           this.toastr.error(err.error.error.message)
+  //         }
+  //       )
+  //     // this.error = this.authService.errorMessage;
+  //   }
+  // }
 }

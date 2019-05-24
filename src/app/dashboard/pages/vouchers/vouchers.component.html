@@ -3,13 +3,12 @@
     <app-header></app-header>
   </div>
   <div *ngIf="!emptyMessage; else empty">
-    <app-voucher [myVoucher]="vouchers" [myKey]="voucherId"></app-voucher>
+    <!-- <app-voucher [myVoucher]="vouchers" [myKey]="voucherId"></app-voucher> -->
   </div>
-  <ng-template #empty>
+  <!-- <ng-template #empty> -->
     <div class="empty">
       <h2 class="h2">{{emptyMessage}}</h2>
       <button class="btn btn-outline-dark" (click)="onClick()">Create</button>
     </div>
-  </ng-template>
-
+  <!-- </ng-template> -->
 </div>

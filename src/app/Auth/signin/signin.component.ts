@@ -29,23 +29,21 @@ export class SigninComponent implements OnInit {
   }
   onSubmit(){
     this.submitting = true
+    // this.submitting = true
     const email = this.f.email.value;
     const password = this.f.password.value
     if(this.signIn.invalid){
       return;
     }else{
-      this.authService.signInUser(email, password)
-        .subscribe(
-          (res) =>{
-            console.log(res)
-            },
-          (err) =>{
-            console.error(err.error.error)
-            this.httpError = err.error.error.message
-            this.toastr.error(err.error.error.message)
-          }
-        )
-      // this.router.navigate(["/dashboard/overview"])
+      this.authService
+      .mutate({
+        email,
+        password
+      })
+      .subscribe(
+        res => console.log(res)
+      )
+      this.router.navigate(["/dashboard/overview"])
     }
     this.error = this.authService.errorMessage;
   }

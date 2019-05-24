@@ -1,8 +1,27 @@
+import { Apollo } from 'apollo-angular';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms"
 import { DashboardService } from '../../dashboard.service';
 import { ToastrService } from 'ngx-toastr';
+import gql from "graphql-tag"
 
+
+const post = gql`
+  mutation{
+    addPost(title:"From ", content:"Another one from angular", status: true, tags:[4]){
+      title
+      content
+      slug
+      id
+      user{
+        id
+        firstName
+        lastName
+        email
+      }
+    }
+  }
+`
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -11,7 +30,7 @@ import { ToastrService } from 'ngx-toastr';
 export class CreateComponent implements OnInit {
   submitting= false
   createVoucher: FormGroup
-  constructor(private fb: FormBuilder, private create: DashboardService, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder, private create: DashboardService, private toastr: ToastrService, private apollo: Apollo) { }
 
   ngOnInit() {
     console.log(this.submitting)
@@ -30,6 +49,9 @@ export class CreateComponent implements OnInit {
   }
   onSubmit() {
     this.submitting = true;
+    this.apollo.mutate({
+      mutation: post
+    }).subscribe(res => console.log(res.data))
     console.log(this.submitting)
     if (this.createVoucher.invalid) {
       return;
